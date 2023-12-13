@@ -1,0 +1,11 @@
+*{
+    user-select:none;
+    outline: none;  
+}
+:root {
+    --dark-gray: #272727;
+    --classic-green: #00a046;
+}
+img{
+    pointer-events:none;
+}
