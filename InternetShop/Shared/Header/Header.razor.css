@@ -52,6 +52,36 @@
             padding: 5px;
             font-size:20px;
         }
+
+/*Стилизация блока с языками*/
+.language {
+    padding: 5px;
+    background: #3e3e3e;
+    color: #ffffff;
+    border-radius: 6px;
+}
+.language-ua {
+    padding: 3px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    border-radius: 2px;
+}
+
+    .language-ua:hover {
+        background-color: #888888;
+    }
+
+.language-en {
+    padding: 3px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    border-radius: 2px;
+}
+
+    .language-en:hover {
+        background-color: #888888;
+    }
+
     .header-area .cart{
         margin-right: 0;
 
