@@ -1,0 +1,15 @@
+﻿@using InternetShop.Models;
+
+<div class="product-card">
+    <img class="product-image" src="https://via.placeholder.com/150x150/">
+    <div class="product-details">
+        <h2 class="product-title">@Product.Title</h2>
+        <span class="product-price">@Product.Price</span>
+        <button class="add-to-cart-btn">Добавить в корзину</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Product Product { get; set; }
+}

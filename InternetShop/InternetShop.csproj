@@ -10,4 +10,16 @@
     <Folder Include="Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.SassCompiler" Version="1.69.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Shared\Products\ProductCard.razor.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Shared\Products\ProductArea.razor.scss" />
+  </ItemGroup>
+
 </Project>
