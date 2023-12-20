@@ -8,6 +8,15 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Shared\Picture\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.SassCompiler" Version="1.69.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Shared\Slider\Slider.razor.scss" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,11 @@
+.slider {
+  display: flex;
+  position: center;
+  margin-left: 500px;
+}
+.slider .figure {
+  width: 200%;
+  height: 50%;
+}
+
+/*# sourceMappingURL=Slider.razor.css.map */
