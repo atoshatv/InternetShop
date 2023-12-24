@@ -1,11 +1,10 @@
 .slider {
   display: flex;
-  position: center;
   margin-left: 500px;
 }
-.slider .figure {
-  width: 200%;
-  height: 50%;
+.slider img {
+  width: 30px;
+  height: 10px;
 }
 
 /*# sourceMappingURL=Slider.razor.css.map */
