@@ -2,15 +2,24 @@
 @using System
 
 <div class="product-area">
-    @foreach (var product in Products)
+    @foreach (var product in Products.Take(displayedProductCount))
     {
         <ProductCard Product="product" />
     }
 </div>
 
+@if (displayedProductCount < Products.Count)
+{
+    <div class="show-more-button">
+        <button @onclick="ShowMore">Показать еще</button>
+    </div>
+}
+
 @code {
     [Parameter]
-    public List<Product> Products { get; set; }
+    public List<Product>? Products { get; set; }
+
+    private int displayedProductCount = 10; // Начальное количество отображаемых товаров
 
     protected override void OnInitialized()
     {
@@ -27,12 +36,17 @@
             var product = new Product
                 {
                     Title = $"Товар {i + 1}",
-                    Price = (decimal)(random.NextDouble() * 100)
+                    Price = (decimal)Math.Round(random.NextDouble() * 100, 2)
                 };
 
             productList.Add(product);
         }
 
         return productList;
+    }
+
+    private void ShowMore()
+    {
+        displayedProductCount = Products.Count; // Показать все оставшиеся товары
     }
 }
