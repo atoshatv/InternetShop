@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspNetCore.SassCompiler" Version="1.69.5" />
+    <PackageReference Include="AspNetCore.SassCompiler" Version="1.69.7" />
   </ItemGroup>
 
   <ItemGroup>
