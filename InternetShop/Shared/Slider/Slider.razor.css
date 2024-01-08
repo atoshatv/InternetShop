@@ -6,6 +6,9 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
+.slider::-webkit-scrollbar {
+  display: none;
+}
 .slider .card {
   scroll-snap-align: start;
   scroll-snap-stop: always;

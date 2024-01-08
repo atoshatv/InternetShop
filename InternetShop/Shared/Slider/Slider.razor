@@ -11,13 +11,34 @@
     
     
 </div>
+    <button  @onclick="Next">Next</button>
+    <button  @onclick="Prev">Prev</button>
+
 @code {
+
     ElementReference slider;
     int index = 0;
     string[] slides = new string[]
-        {
+    {
         "picture/slider1.jpg",
-        "picture/slider2.jpg"
-        };
+        "picture/slider2.jpg",
+        "picture/slider3.jpg"
+    };
+
+    async Task Next()
+    {
+        index = (index + 1) % slides.Length;
+        js.InvokeVoidAsync("ScrollSlider", slider, index);
+
+    }
+
+    async Task Prev()
+    {
+        index = index > 0 ? index - 1 : slides.Length - 1;
+        js.InvokeVoidAsync("ScrollSlider", slider, index);
+
+    }
+
+    
 
 }

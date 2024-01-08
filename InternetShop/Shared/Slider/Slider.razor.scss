@@ -6,7 +6,9 @@
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-
+    &::-webkit-scrollbar{
+        display:none;
+    }
     .card {
         scroll-snap-align:start;
         scroll-snap-stop:always;
