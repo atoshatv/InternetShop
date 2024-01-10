@@ -1,5 +1,7 @@
 ﻿@inject IJSRuntime js
-<div class="slider" @ref="slider">
+<div class="slider" @ref="slider" 
+                    @onmouseleave="Leave" 
+                    @onmouseenter="Enter">
     @foreach (var slide in slides)
     {
         <div class="card">
@@ -15,7 +17,7 @@
     <button  @onclick="Prev">Prev</button>
 
 @code {
-
+    Timer sliderTimer;
     ElementReference slider;
     int index = 0;
     string[] slides = new string[]
@@ -28,17 +30,35 @@
     async Task Next()
     {
         index = (index + 1) % slides.Length;
-        js.InvokeVoidAsync("ScrollSlider", slider, index);
+        await js.InvokeVoidAsync("ScrollSlider", slider, index);
 
     }
 
     async Task Prev()
     {
         index = index > 0 ? index - 1 : slides.Length - 1;
-        js.InvokeVoidAsync("ScrollSlider", slider, index);
+        await js.InvokeVoidAsync("ScrollSlider", slider, index);
 
     }
+    void Enter()
+    {
+        sliderTimer.Stop();
 
-    
+    }
+    void Leave()
+    {
+        sliderTimer.Start();
+
+    }
+    protected override void OnInitialized()
+    {
+        sliderTimer = new Timer(5000);
+        sliderTimer.Elapsed += Tick;
+        sliderTimer.Start();
+    }
+    private  void Tick(object? sender, EventArgs e)
+    {
+        Next();
+    }
 
 }
