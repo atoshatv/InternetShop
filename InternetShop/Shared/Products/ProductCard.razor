@@ -1,14 +1,38 @@
 ﻿@using InternetShop.Models;
 
 <div class="product-card">
-    <img class="product-image" src="https://via.placeholder.com/150x150/">
+@*     @if (Product != null && Product.Photos.Length > 0)
+    {
+        <img class="product-image" src="@Product.Photos[currentPhotoIndex]" alt="Product Image"
+        @onmouseover="HandleMouseOver" @onmouseout="HandleMouseOut">
+    }
+    else
+    {  *@
+       <img class="product-image" src="https://via.placeholder.com/150x150/" alt="Placeholder Image">
+     @* } *@
+
     <div class="product-details">
-        <h2 class="product-title">@Product.Title</h2>
-        <span class="product-price">@Product.Price ₴</span>
+        <h2 class="product-title">@Product?.Title</h2>
+        <span class="product-price">@Product?.Price ₴</span>
     </div>
 </div>
 
 @code {
     [Parameter]
     public Product Product { get; set; }
+
+    private int currentPhotoIndex = 0;
+
+    private void HandleMouseOver()
+    {
+        // При наведении изменяем индекс фото
+        if (Product != null && Product.Photos.Length > 1)
+            currentPhotoIndex = (currentPhotoIndex + 1) % Product.Photos.Length;
+    }
+
+    private void HandleMouseOut() 
+    {
+        // При выходе сбрасываем индекс фото
+        currentPhotoIndex = 0;
+    }
 }
