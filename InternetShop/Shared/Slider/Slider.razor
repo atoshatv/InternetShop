@@ -8,13 +8,15 @@
 
             <img src="@slide" />
 
+            <button class="prev-btn" @onclick="Prev" @onclick:stopPropagation></button>
+            <button class="next-btn" @onclick="Next" @onclick:stopPropagation></button>
+
         </div>
     }
     
     
 </div>
-    <button  @onclick="Next">Next</button>
-    <button  @onclick="Prev">Prev</button>
+   
 
 @code {
     Timer sliderTimer;

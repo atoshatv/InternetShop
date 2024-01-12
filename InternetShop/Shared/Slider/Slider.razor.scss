@@ -6,14 +6,50 @@
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    &::-webkit-scrollbar{
-        display:none;
+
+    &::-webkit-scrollbar {
+        display: none;
     }
+
     .card {
-        scroll-snap-align:start;
-        scroll-snap-stop:always;
+        position: relative;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+
         img {
             width: 600px;
         }
+
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+
+        .prev-btn {
+            width: 35px;
+            height: 56px;
+            left: 10px;
+            background-image: url('picture/LEFT.png');
+        }
+
+        .next-btn {
+            width: 35px;
+            height: 56px;
+            right: 10px;
+            background-image: url('picture/righ.png');
+        }
+    }
+
+    &:hover .card .prev-btn,
+    &:hover .card .next-btn {
+        opacity: 1; 
     }
 }
