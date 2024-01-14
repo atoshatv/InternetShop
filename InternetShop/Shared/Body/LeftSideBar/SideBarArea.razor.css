@@ -1,0 +1,168 @@
+﻿.Main-SideBar {
+    border-right: 1px solid #808080;
+    height: 2000px;
+    width: 325px;
+    padding-top: 30px;
+}
+
+.Main-Categories-SideBar {
+    width: 275px;
+    float: right;
+    border-bottom: 0.5px solid #808080;
+    padding-bottom: 20px;
+}
+
+    .Main-Categories-SideBar li a {
+        text-decoration: none;
+        color: #797878;
+    }
+
+        .Main-Categories-SideBar li a:hover {
+            text-decoration: underline;
+            color: red;
+        }
+
+.main-category {
+    margin-left: 10px;
+    padding-block: 5px;
+    font-family: Candara;
+    list-style-type: none;
+    height: 25px;
+    width: 275px;
+}
+
+.Menu-helps {
+    width: 275px;
+    float: right;
+}
+
+    .Menu-helps li a {
+        text-decoration: none;
+        color: #797878;
+    }
+
+        .Menu-helps li a:hover {
+            text-decoration: underline;
+            color: red;
+        }
+
+.Menu-help {
+    margin-top: 5px;
+    padding-block: 10px;
+    font-family: Candara;
+    list-style-type: none;
+    height: 25px;
+    width: 275px;
+    border-bottom: 0.5px solid #808080;
+}
+
+.fa-xl {
+    padding-right: 15px;
+    height: 24px;
+    width: 24px;
+}
+
+.Menu-Welcome-SideBar {
+    float: right;
+    height: 135px;
+    width: 275px;
+    background-color: #f4f4f4;
+    padding: 5px 0 5px 0;
+    margin-bottom: 20px;
+    border-bottom: 0.5px solid #808080;
+}
+
+.Welcome {
+    text-align: center;
+    font-family: Candara;
+    padding: 5px 0 5px 0;
+}
+
+.Menu-Welcome-SideBar h2 {
+    font-weight: bold;
+}
+
+.Menu-Welcome-SideBar p {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.button-Welcome {
+    font-family: Candara;
+    color: white;
+    border: none;
+    background-color: #2c9e10;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    margin: 5px auto;
+    display: block;
+    border-radius: 15px 15px;
+}
+
+    .button-Welcome:hover {
+        background-color: #25870e;
+        color: white;
+    }
+
+.Main-Social-SideBar {
+    width: 275px;
+    float: right;
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid #808080;
+}
+
+.main-social-head {
+    text-align: center;
+    padding-bottom: 8px;
+    font-family: Candara;
+    color: #797878;
+}
+
+.main-social-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.icon-social {
+    padding: 8px 0 0 18px;
+    height: 24px;
+    width: 24px;
+}
+
+    .icon-social:hover {
+        opacity: 0.5;
+    }
+
+.Main-Block-SideBar {
+    font-family: Candara;
+    padding: 20px 0 20px 0;
+}
+
+.Block-Info {
+    border-bottom: 0.5px solid #808080;
+    padding: 20px 0 20px 0;
+    width: 275px;
+    float: right;
+    color: #797878;
+}
+
+.Info {
+    padding: 10px 0 10px 5px;
+    list-style-type: none;
+}
+
+    .Info li a {
+        text-decoration: none;
+        color: #8a8a8a;
+    }
+
+        .Info li a:hover {
+            text-decoration: underline;
+            color: #797878;
+        }
+
+.Info-text {
+    padding: 5px 0 5px 5px;
+    color: #8a8a8a;
+}
