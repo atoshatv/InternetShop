@@ -4,6 +4,9 @@
     flex-direction: column;
 }
 
+.slider{
+   position:absolute;
+}
 main {
     flex: 1;
 }
