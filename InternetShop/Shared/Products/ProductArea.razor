@@ -1,5 +1,4 @@
 ﻿@using InternetShop.Models
-@using System
 
 <div class="product-area">
     @foreach (var product in Products.Take(displayedProductCount))
@@ -23,27 +22,154 @@
 
     protected override void OnInitialized()
     {
-        Products = GenerateProductList(21);
+        Products = GenerateProductList(22);
     }
 
     private List<Product> GenerateProductList(int count)
     {
         var productList = new List<Product>();
 
-        var random = new Random();
-        for (int i = 0; i < count; i++)
-        {
-            var product = new Product
-                {
-                    Title = $"Товар {i + 1}",
-                    Price = (decimal)Math.Round(random.NextDouble() * 100, 2)
-                };
+        #region Создание экземпляров товаров
+        var product1 = new Product
+            {
+                Photos = new string[] {"https://content.rozetka.com.ua/goods/images/preview/367123263.jpg",
+                    "https://content2.rozetka.com.ua/goods/images/preview/367123264.jpg" },
+                Title = $"Навушники Hator Hyperpunk 2 Wireless Tri-mode Black/Mint (HTA-858)",
+                Price = 2799,
+            };
+        productList.Add(product1);
 
-            productList.Add(product);
-        }
+        var product2 = new Product
+            {
+                Photos = new string[]{"https://content.rozetka.com.ua/goods/images/preview/367123263.jpg",
+                "https://content2.rozetka.com.ua/goods/images/preview/367123264.jpg" },
+                Title = $"Навушники Hator Hyperpunk 2 Wireless Tri-mode Black/Mint (HTA-851)",
+                Price = 2799,
+            };
+        productList.Add(product2);
+
+        var product3 = new Product
+            {
+                Photos = new string[]{"https://content.rozetka.com.ua/goods/images/preview/367123263.jpg",
+                "https://content2.rozetka.com.ua/goods/images/preview/367123264.jpg" },
+                Title = $"Навушники Hator Hyperpunk 2 Wireless Tri-mode Black/Mint (HTA-852)",
+                Price = 2799,
+            };
+        productList.Add(product3);
+
+        var product4 = new Product
+            {
+                Photos = new string[]{"https://content2.rozetka.com.ua/goods/images/preview/330083688.jpg",
+                    "https://content2.rozetka.com.ua/goods/images/preview/330083689.jpg" },
+                Title = $"Навушники Hator Hyperpunk 2 Wireless Tri-mode Black/Mint (HTA-857)",
+                Price = 2799,
+            };
+        productList.Add(product4);
+
+        var product5 = new Product
+            {
+                Photos = new string[]{"https://content.rozetka.com.ua/goods/images/preview/367123263.jpg",
+                "https://content2.rozetka.com.ua/goods/images/preview/367123264.jpg" },
+                Title = $"Навушники Hator Hyperpunk 2 Wireless Tri-mode Black/Mint (HTA-854)",
+                Price = 2799,
+            };
+        productList.Add(product5);
+
+        var product6 = new Product
+            {
+
+                Photos = new string[] { "https://via.placeholder.com/135x135/" },
+                Title = $"Test",
+                Price = 2799,
+            };
+        productList.Add(product6);
+
+        var product7 = new Product
+            {
+
+                Photos = new string[] { "https://via.placeholder.com/135x135/" },
+                Title = $"Test",
+                Price = 2799,
+            };
+        productList.Add(product7);
+
+        var product8 = new Product
+            {
+
+                Photos = new string[] { "https://via.placeholder.com/135x135/" },
+                Title = $"Test",
+                Price = 2799,
+            };
+        productList.Add(product8);
+
+        var product9 = new Product
+            {
+
+                Photos = new string[] { "https://via.placeholder.com/135x135/" },
+                Title = $"Test",
+                Price = 2799,
+            };
+        productList.Add(product9);
+
+                var product10 = new Product
+            {
+
+                Photos = new string[] { "https://via.placeholder.com/135x135/" },
+                Title = $"Test",
+                Price = 2799,
+            };
+        productList.Add(product10);
+
+        var product11 = new Product
+            {
+
+                Photos = new string[] { "https://via.placeholder.com/135x135/" },
+                Title = $"Test",
+                Price = 2799,
+            };
+        productList.Add(product11);
+
+        var product12 = new Product
+            {
+
+                Photos = new string[] { "https://via.placeholder.com/135x135/" },
+                Title = $"Test",
+                Price = 2799,
+            };
+        productList.Add(product12);
+
+        var product13 = new Product
+            {
+
+                Photos = new string[] { "https://via.placeholder.com/135x135/" },
+                Title = $"Test",
+                Price = 2799,
+            };
+        productList.Add(product13);
+
+        var product14 = new Product
+            {
+
+                Photos = new string[] { "https://via.placeholder.com/135x135/" },
+                Title = $"Test",
+                Price = 2799,
+            };
+        productList.Add(product14);
+
+        var product15 = new Product
+            {
+
+                Photos = new string[] { "https://via.placeholder.com/135x135/" },
+                Title = $"Test",
+                Price = 2799,
+            };
+        productList.Add(product15);
+        #endregion
 
         return productList;
     }
+
+
 
     private void ShowMore()
     {
