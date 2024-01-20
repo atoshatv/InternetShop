@@ -1,8 +1,10 @@
 ﻿@using InternetShop.Models;
 
 <div class="product-card">
-    <img class="product-image" src="@Product.Photos[currentPhotoIndex]" alt="Product Image"
-    @onmouseover="HandleMouseOver" @onmouseout="HandleMouseOut">
+    <div class="image-container">
+        <img class="product-background-image" src="@Product.Photos[currentPhotoIndex + 1]" alt="Background Image">
+        <img class="product-image" src="@Product.Photos[currentPhotoIndex]" alt="Product Image">
+    </div>
 
     <div class="product-details">
         <h2 class="product-title">@Product?.Title</h2>
@@ -15,21 +17,4 @@
     public Product Product { get; set; }
 
     private int currentPhotoIndex = 0;
-
-    private void HandleMouseOver()
-    {
-        // При наведении изменяем индекс фото
-        if (Product != null && Product.Photos.Length > 1)
-        {
-            currentPhotoIndex = (currentPhotoIndex + 1) % Product.Photos.Length;
-            InvokeAsync(StateHasChanged);
-        }
-    }
-
-    private void HandleMouseOut() 
-    {
-        //Сброс индекса
-        currentPhotoIndex = 0; 
-        InvokeAsync(StateHasChanged);
-    }
 }
