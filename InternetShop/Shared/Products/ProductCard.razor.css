@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .product-card {
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -11,32 +10,22 @@
   position: relative;
 }
 .product-card .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 100%;
 }
-.product-card .product-background-image,
 .product-card .product-image {
-  margin: auto;
   width: 135px;
   height: 135px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
   transition: opacity 0.3s ease-in-out;
 }
-.product-card .product-image {
-  z-index: 2;
-}
-.product-card:hover .product-image {
-  opacity: 0;
-}
 .product-card .product-details {
-  padding: 20px;
+  padding: 15px;
   box-sizing: border-box;
-  text-align: left; /* Изменил выравнивание текста на левое */
+  text-align: left;
 }
 .product-card .product-details .product-title {
   font-size: 12pt;

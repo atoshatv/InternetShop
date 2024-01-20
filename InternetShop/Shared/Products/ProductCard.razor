@@ -1,8 +1,7 @@
 ﻿@using InternetShop.Models;
 
 <div class="product-card">
-    <div class="image-container">
-        <img class="product-background-image" src="@Product.Photos[currentPhotoIndex + 1]" alt="Background Image">
+    <div class="image-container" @onmouseover="ChangeImage" @onmouseout="ResetImage">
         <img class="product-image" src="@Product.Photos[currentPhotoIndex]" alt="Product Image">
     </div>
 
@@ -17,4 +16,24 @@
     public Product Product { get; set; }
 
     private int currentPhotoIndex = 0;
+
+    private void ChangeImage()
+    {
+        // Увеличиваем индекс изображения на 1 (если есть следующее изображение)
+        if (currentPhotoIndex < Product.Photos.Length - 1)
+        {
+            currentPhotoIndex++;
+        }
+        else
+        {
+            // Если мы достигли конца списка изображений, вернемся к началу
+            currentPhotoIndex = 0;
+        }
+    }
+
+    private void ResetImage()
+    {
+        // Сбрасываем индекс изображения обратно в 0 при уходе мыши
+        currentPhotoIndex = 0;
+    }
 }
