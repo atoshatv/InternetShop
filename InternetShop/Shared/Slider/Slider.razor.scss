@@ -1,8 +1,9 @@
 ﻿
 .slider {
-    width: 600px;
+    width: 1100px;
     display: flex;
-    margin-left: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -16,15 +17,20 @@
         scroll-snap-align: start;
         scroll-snap-stop: always;
 
+
+
+
+
+
         img {
-            width: 600px;
+            width: 1100px;
         }
 
         .prev-btn, .next-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.5);
+            background: transparent;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -46,10 +52,37 @@
             right: 10px;
             background-image: url('picture/righ.png');
         }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+
+            .dot {
+                width: 10px;
+                height: 10px;
+                margin: 0 5px;
+                border-radius: 50%;
+                background-color: grey;
+                cursor: pointer;
+            }
+
+            .dot.active {
+                background-color: aquamarine;
+            }
+        }
     }
 
+
+
+
     &:hover .card .prev-btn,
-    &:hover .card .next-btn {
-        opacity: 1; 
+    &:hover .card .next-btn,
+    &:hover .card .slider-dots {
+        opacity: 1;
     }
 }

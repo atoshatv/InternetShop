@@ -5,14 +5,27 @@
     @foreach (var slide in slides)
     {
         <div class="card">
+            
+             <img src="@slide" />
 
-            <img src="@slide" />
+             <button class="prev-btn" @onclick="Prev" @onclick:stopPropagation></button>
+             <button class="next-btn" @onclick="Next" @onclick:stopPropagation></button>
 
-            <button class="prev-btn" @onclick="Prev" @onclick:stopPropagation></button>
-            <button class="next-btn" @onclick="Next" @onclick:stopPropagation></button>
+            <div class="slider-dots">
+                @for (int i = 0; i < slides.Length; i++)
+                {
+                    <div class="dot @(i == index ? "active" : "")" @onclick="() => GoToSlide(i)"></div>
+                }
+            </div>
+
 
         </div>
+       
+        
     }
+
+    
+    
     
     
 </div>
@@ -22,6 +35,9 @@
     Timer sliderTimer;
     ElementReference slider;
     int index = 0;
+
+    
+
     string[] slides = new string[]
     {
         "picture/slider1.jpg",
@@ -31,24 +47,37 @@
 
     async Task Next()
     {
+        // index = (index + 1) % slides.Length;
+        //await js.InvokeVoidAsync("ScrollSlider", slider, index);
+       
+       
         index = (index + 1) % slides.Length;
-        await js.InvokeVoidAsync("ScrollSlider", slider, index);
+        await UpdateSlider();
+       
+       
 
     }
 
     async Task Prev()
     {
+        // index = index > 0 ? index - 1 : slides.Length - 1;
+        //await js.InvokeVoidAsync("ScrollSlider", slider, index);
+     
+        
+       
         index = index > 0 ? index - 1 : slides.Length - 1;
-        await js.InvokeVoidAsync("ScrollSlider", slider, index);
-
+        await UpdateSlider();
+        
     }
     void Enter()
     {
+       
         sliderTimer.Stop();
 
     }
     void Leave()
     {
+        
         sliderTimer.Start();
 
     }
@@ -60,7 +89,23 @@
     }
     private  void Tick(object? sender, EventArgs e)
     {
-        Next();
+        
+        
+            Next();
+            
+        
+    }
+   
+  
+    void GoToSlide(int newIndex)
+    {
+        index = newIndex;
+        UpdateSlider();
     }
 
+    async Task UpdateSlider()
+    {
+        await js.InvokeVoidAsync("ScrollSlider", slider, index);
+    }
+   
 }
