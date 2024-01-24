@@ -1,34 +1,24 @@
-﻿@using InternetShop.Models
-
-<div class="product-area">
-    @foreach (var product in Products.Take(displayedProductCount))
-    {
-        <ProductCard Product="product" />
-    }
+﻿<div class="proposition-area">
+    <div class="product-area @(Show? "": "hiden")">
+        @foreach (var product in Products)
+        {
+            <div class="product-card">
+                <ProductCard Product="product" />
+            </div>
+        }
+    </div>
 </div>
-
-@if (displayedProductCount < Products.Count)
+@if (!Show)
 {
     <div class="show-more-button">
-        <div @onclick="ShowMore">Показать еще ↓</div>
+        <button @onclick="ShowAllProducts">Показать еще ↓</button>
     </div>
 }
 
 @code {
-    [Parameter]
-    public List<Product>? Products { get; set; }
-
-    private int displayedProductCount = 10; // Начальное количество отображаемых товаров
-
-    protected override void OnInitialized()
+    public bool Show { get; set; }
+    List<Product> Products = new List<Product>
     {
-        Products = GenerateProductList(22);
-    }
-
-    private List<Product> GenerateProductList(int count)
-    {
-        var productList = new List<Product>
-        {
             new Product
             {
                 Photos = new string[] {
@@ -157,14 +147,11 @@
                 },
                 Title = $"Test",
                 Price = 2799,
-            },
-        };
+            }
+    };
 
-        return productList;
-    }
-
-    private void ShowMore()
+    public void ShowAllProducts()
     {
-        displayedProductCount = Products.Count; // Показать все оставшиеся товары
+        Show = true;
     }
 }

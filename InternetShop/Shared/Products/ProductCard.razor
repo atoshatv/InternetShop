@@ -1,39 +1,23 @@
-﻿@using InternetShop.Models;
-
-<div class="product-card">
-    <div class="image-container" @onmouseover="ChangeImage" @onmouseout="ResetImage">
-        <img class="product-image" src="@Product.Photos[currentPhotoIndex]" alt="Product Image">
+﻿<div class="product-card">
+    <div class="image-container">
+        <img class="product-image" src="@Product.Photos[0]" alt="Product Image">
+    </div>
+    <div class="image-container hovered">
+        <img class="product-image" src="@Product.Photos[1]" alt="Product Image">
     </div>
 
     <div class="product-details">
-        <h2 class="product-title">@Product?.Title</h2>
-        <span class="product-price">@Product?.Price ₴</span>
+        <p class="product-title">@Product?.Title</p>
+    </div>
+    <div class="product-price">
+        <div class="product-price-area">
+            <p class="product-price-label">@Product?.Price ₴</p>
+            <p class="product-price-label">@Product?.Price ₴</p>
+        </div>
     </div>
 </div>
 
 @code {
     [Parameter]
     public Product Product { get; set; }
-
-    private int currentPhotoIndex = 0;
-
-    private void ChangeImage()
-    {
-        // Увеличиваем индекс изображения на 1 (если есть следующее изображение)
-        if (currentPhotoIndex < Product.Photos.Length - 1)
-        {
-            currentPhotoIndex++;
-        }
-        else
-        {
-            // Если мы достигли конца списка изображений, вернемся к началу
-            currentPhotoIndex = 0;
-        }
-    }
-
-    private void ResetImage()
-    {
-        // Сбрасываем индекс изображения обратно в 0 при уходе мыши
-        currentPhotoIndex = 0;
-    }
 }
