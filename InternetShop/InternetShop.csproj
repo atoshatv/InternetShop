@@ -24,4 +24,12 @@
     <UpToDateCheckInput Remove="Shared\Header\HeaderDiscount.scss" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Shared\Header\Header.razor.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Index.razor.scss" />
+  </ItemGroup>
+
 </Project>

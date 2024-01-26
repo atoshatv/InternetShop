@@ -1,24 +1,49 @@
-.slider {
-  width: 1100px;
-  display: flex;
+.slider-area {
+  position: relative;
+  height: max-content;
+  max-width: 1160px;
   margin-top: 20px;
   margin-left: 20px;
+}
+.slider-area .slider {
+  width: 100%;
+  display: flex;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
-.slider::-webkit-scrollbar {
+.slider-area .slider::-webkit-scrollbar {
   display: none;
 }
-.slider .card {
+.slider-area .slider .card {
   position: relative;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-.slider .card img {
-  width: 1100px;
+.slider-area .slider .card img {
+  max-width: 1170px;
 }
-.slider .card .prev-btn, .slider .card .next-btn {
+.slider-area .slider-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.slider-area .slider-dots .dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: grey;
+  cursor: pointer;
+}
+.slider-area .slider-dots .dot.active {
+  background-color: aquamarine;
+}
+.slider-area .prev-btn, .slider-area .next-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -29,39 +54,19 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-.slider .card .prev-btn {
+.slider-area .prev-btn {
   width: 35px;
   height: 56px;
   left: 10px;
   background-image: url("picture/LEFT.png");
 }
-.slider .card .next-btn {
+.slider-area .next-btn {
   width: 35px;
   height: 56px;
   right: 10px;
   background-image: url("picture/righ.png");
 }
-.slider .card .slider-dots {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-.slider .card .slider-dots .dot {
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  border-radius: 50%;
-  background-color: grey;
-  cursor: pointer;
-}
-.slider .card .slider-dots .dot.active {
-  background-color: aquamarine;
-}
-.slider:hover .card .prev-btn, .slider:hover .card .next-btn, .slider:hover .card .slider-dots {
+.slider-area:hover .prev-btn, .slider-area:hover .next-btn, .slider-area:hover .slider-dots {
   opacity: 1;
 }
 

@@ -1,34 +1,31 @@
 ﻿@inject IJSRuntime js
-<div class="slider" @ref="slider" 
-                    @onmouseleave="Leave" 
-                    @onmouseenter="Enter">
-    @foreach (var slide in slides)
-    {
-        <div class="card">
-            
-             <img src="@slide" />
+<div class="slider-area">
+    <div class="slider" @ref="slider"
+         @onmouseleave="Leave"
+         @onmouseenter="Enter">
+        @foreach (var slide in slides)
+        {
+            <div class="card">
 
-             <button class="prev-btn" @onclick="Prev" @onclick:stopPropagation></button>
-             <button class="next-btn" @onclick="Next" @onclick:stopPropagation></button>
+                <img src="@slide" />
 
-            <div class="slider-dots">
-                @for (int i = 0; i < slides.Length; i++)
-                {
-                    <div class="dot @(i == index ? "active" : "")" @onclick="() => GoToSlide(i)"></div>
-                }
+                
             </div>
+        }
+     
+    </div>
+   
+    <div class="slider-dots">
+        @for (int i = 0; i < slides.Length; i++)
+        {
+            <div class="dot @(i == index ? "active" : "")" @onclick="() => GoToSlide(i)"></div>
+        }
+    </div>
+    <button class="prev-btn" @onclick="Prev"></button>
+    <button class="next-btn" @onclick="Next"></button>
 
-
-        </div>
-       
-        
-    }
-
-    
-    
-    
-    
 </div>
+
    
 
 @code {
