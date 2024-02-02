@@ -5,30 +5,53 @@
 }
 
 .header-area {
-    max-width:absolute;
-    height: 72px;
+    min-width: absolute;
+    max-height: 72px;
     background: var(--dark-gray);
     display: flex;
     justify-content: center;
 
     .header {
         background: var(--dark-gray);
-        
         display: flex;
-        width: 1500px;
+        width: 100%;
 
         &-item {
             margin: auto;
             margin-left: 0;
-            margin-right: 16px;
+            margin-right: 4vh;
             display: flex;
         }
 
         &-button {
             max-width: 40px;
-            height: 40px;
+            max-height: 40px;
             display: flex;
         }
+
+        .menu {
+            padding-left: 4vh;
+        }
+
+        .cart {
+            padding-right: 4vh;
+        }
+
+        @media only screen and (max-width: 750px) {
+            .language {
+                display: none;
+            }
+
+            .catalog {
+                display: none;
+            }
+
+            .profile {
+                display: none;
+            }
+        }
+
+       
     }
 
     .search-area {

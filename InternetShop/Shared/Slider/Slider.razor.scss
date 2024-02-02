@@ -1,7 +1,7 @@
 ﻿.slider-area {
     position: relative;
     height: max-content;
-    max-width: 1160px;
+    width: 1160px;
     margin-top: 20px;
     margin-left: 20px;
 
@@ -21,7 +21,7 @@
             position: relative;
             scroll-snap-align: start;
             scroll-snap-stop: always;
-
+            
 
 
 
@@ -29,7 +29,8 @@
 
             img {
 
-                max-width:1170px;
+                max-width:100%/3;
+               
             }
         }
     }

@@ -5,8 +5,8 @@ i {
 }
 
 .header-area {
-  max-width: absolute;
-  height: 72px;
+  min-width: absolute;
+  max-height: 72px;
   background: var(--dark-gray);
   display: flex;
   justify-content: center;
@@ -14,18 +14,35 @@ i {
 .header-area .header {
   background: var(--dark-gray);
   display: flex;
-  width: 1500px;
+  width: 100%;
 }
 .header-area .header-item {
   margin: auto;
   margin-left: 0;
-  margin-right: 16px;
+  margin-right: 4vh;
   display: flex;
 }
 .header-area .header-button {
   max-width: 40px;
-  height: 40px;
+  max-height: 40px;
   display: flex;
+}
+.header-area .header .menu {
+  padding-left: 4vh;
+}
+.header-area .header .cart {
+  padding-right: 4vh;
+}
+@media only screen and (max-width: 750px) {
+  .header-area .header .language {
+    display: none;
+  }
+  .header-area .header .catalog {
+    display: none;
+  }
+  .header-area .header .profile {
+    display: none;
+  }
 }
 .header-area .search-area {
   width: 100%;

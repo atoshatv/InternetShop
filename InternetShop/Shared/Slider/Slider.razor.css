@@ -1,7 +1,7 @@
 .slider-area {
   position: relative;
   height: max-content;
-  max-width: 1160px;
+  width: 1160px;
   margin-top: 20px;
   margin-left: 20px;
 }
@@ -21,7 +21,7 @@
   scroll-snap-stop: always;
 }
 .slider-area .slider .card img {
-  max-width: 1170px;
+  max-width: 100%/3;
 }
 .slider-area .slider-dots {
   display: flex;
