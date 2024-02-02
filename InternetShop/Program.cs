@@ -1,12 +1,17 @@
 
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using BusinessLogicLayer;
+using InternetShop.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+
+builder.Services.AddBusinessLogicLayer();
+builder.Services.AddScoped<BaseUserService>();
 
 var app = builder.Build();
 

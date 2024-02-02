@@ -1,4 +1,32 @@
 ﻿@page "/"
+@inject BaseUserService baseUserService;
+<div>
+    @if (Users != null)
+    {
+        @foreach (var user in Users)
+        {
+            <p>@user.Name</p>
+        }
+    }
+    else{
+        <p>@Error</p>
+    }
+</div>
 
-<PageTitle>Index</PageTitle>
+@code{
+    List<User> Users { get; set; }
+    string Error { get; set; }
+    protected override void OnInitialized()
+    {
+        var baseUser = baseUserService.GetAllUsers();
+        if (baseUser.Status == StatusType.OK)
+        {
+            Users = baseUser.Data;
+        }
+        else
+        {
+            Error = baseUser.Message;
+        }
+    }
+}
 
